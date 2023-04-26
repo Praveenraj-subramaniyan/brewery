@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/brewery/static/css/main.16a8dcaf.css",
+    "main.js": "/brewery/static/js/main.226bd6a4.js",
+    "static/js/787.2833db4d.chunk.js": "/brewery/static/js/787.2833db4d.chunk.js",
+    "static/media/beer-bg-1680pxbright.png": "/brewery/static/media/beer-bg-1680pxbright.057edf48cf0d5edbb963.png",
+    "index.html": "/brewery/index.html",
+    "main.16a8dcaf.css.map": "/brewery/static/css/main.16a8dcaf.css.map",
+    "main.226bd6a4.js.map": "/brewery/static/js/main.226bd6a4.js.map",
+    "787.2833db4d.chunk.js.map": "/brewery/static/js/787.2833db4d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.16a8dcaf.css",
+    "static/js/main.226bd6a4.js"
+  ]
+}
