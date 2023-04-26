@@ -29,6 +29,7 @@ p{
   border-radius: 5px;
   padding: 6px;
   margin-bottom: 1%;
+  background-color: yellow;
 }
 .search-bar{
   position: absolute;
