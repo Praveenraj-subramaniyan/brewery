@@ -9,7 +9,7 @@ function App() {
   function Search() {
     const value = document.getElementById("inputBox").value.trim();
     if (value === "") {
-      setsearchData(breweryData); // reset searchData to breweryData if input is empty
+      setsearchData(breweryData);
     } else {
       const filteredData = breweryData.filter((data) =>
         data.name.toLowerCase().includes(value.toLowerCase())
@@ -33,7 +33,6 @@ function App() {
           });
           setbreweryData(data);
           setsearchData(data);
-          console.log(data[0].name);
         })
         .catch((error) => console.log(error));
     }
