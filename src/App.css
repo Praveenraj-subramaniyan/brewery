@@ -4,11 +4,15 @@
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+    width: 100%;
 }
 .details{
   background-color:rgba(255,249,9,255);
-  margin: 0px;
-
+  padding-bottom: 100px;
+}
+.detailsEmpty{
+  background-color:rgba(255,249,9,255);
+  height: 265px;
 }
 p{
   margin-top: 0px;
@@ -30,13 +34,13 @@ p{
   position: absolute;
   top: 80%;
   left: 30%;
-  width: 100%;
+  width: 70%;
 }
 .search-bar input {
   height: 100%;
-  border: 3px solid yellowgreen;
+  border: 2px solid yellowgreen;
   width: 25%;
-  padding: 6px;
+  padding: 4px 6px 6px 6px;
   font-size: 20px;
   font-weight: 500;
   color: #535353;
@@ -56,14 +60,43 @@ p{
   font-size: 16px;
   font-weight: 500;
   margin-left: 5px;
+  margin-top: 0px;
 }
 a{
   text-decoration: none;
   color: black;
 }
-@media (max-width : 600px){
+@media (max-width : 820px){
   .search-bar button{
-    
-    width: 60px; 
+    width: 65px; 
   }
+  .card{
+    margin-left: 30%;
+    margin-right: 20%;
+    border: 3px solid yellowgreen;
+    width: 45%;
+    border-radius: 5px;
+    padding: 6px;
+    margin-bottom: 1%;
+  }
+  .search-bar input {
+    height: 100%;
+    border: 3px solid yellowgreen;
+    width: 160px;
+    padding: 6px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #535353;
+    background-color: transparent;
+    border-radius: 5px;
+  }
+}
+.pagination{
+  margin-left: 30%;
+  margin-top: 5%;
+}
+.pagination button{
+ background-color: yellowgreen;
+ color: white;
+ border: 0px;
 }
