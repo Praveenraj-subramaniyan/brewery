@@ -19,23 +19,28 @@ function App() {
   }
   useEffect(() => {
     async function fetchData() {
-      fetch(`https://api.openbrewerydb.org/breweries/`)
-        .then((response) => response.json())
-        .then((data) => {
-          data.sort((a, b) => {
-            if (a.name.common < b.name.common) {
-              return -1;
-            }
-            if (a.name.common > b.name.common) {
-              return 1;
-            }
-            return 0;
-          });
-          setbreweryData(data);
-          setsearchData(data);
-        })
-        .catch((error) => console.log(error));
+      try {
+        fetch(`https://api.openbrewerydb.org/breweries/`)
+          .then((response) => response.json())
+          .then((data) => {
+            data.sort((a, b) => {
+              if (a.name.common < b.name.common) {
+                return -1;
+              }
+              if (a.name.common > b.name.common) {
+                return 1;
+              }
+              return 0;
+            });
+            setbreweryData(data);
+            setsearchData(data);
+          })
+          .catch((error) => console.log(error));
+      } catch (e) {
+        console.log(e);
+      }
     }
+
     fetchData();
     setsearchData(breweryData);
   }, []);
@@ -84,40 +89,39 @@ function App() {
               </div>
             ))}
         </div>
-        {currentList[0] &&(
-                  <div id="buttons" className="">
-                  <ul className="pagination" id="pagination">
-                    <button
-                      id="previous"
-                      className=" page-link"
-                      disabled={currentPage === 1}
-                      onClick={() => setCurrentPage(currentPage - 1)}
-                    >
-                      Previous
-                    </button>
-                    {Array.from({ length: totalPages }).map((_, index) => (
-                      <button
-                        className={`page-link  ${
-                          currentPage === index + 1 ? "active" : ""
-                        }`}
-                        onClick={() => setCurrentPage(index + 1)}
-                      >
-                        {index + 1}
-                      </button>
-                    ))}
-        
-                    <button
-                      id="next"
-                      className=" page-link"
-                      disabled={currentPage === totalPages}
-                      onClick={() => setCurrentPage(currentPage + 1)}
-                    >
-                      Next
-                    </button>
-                  </ul>
-                </div>
-        )}
+        {currentList[0] && (
+          <div id="buttons" className="">
+            <ul className="pagination" id="pagination">
+              <button
+                id="previous"
+                className=" page-link"
+                disabled={currentPage === 1}
+                onClick={() => setCurrentPage(currentPage - 1)}
+              >
+                Previous
+              </button>
+              {Array.from({ length: totalPages }).map((_, index) => (
+                <button
+                  className={`page-link  ${
+                    currentPage === index + 1 ? "active" : ""
+                  }`}
+                  onClick={() => setCurrentPage(index + 1)}
+                >
+                  {index + 1}
+                </button>
+              ))}
 
+              <button
+                id="next"
+                className=" page-link"
+                disabled={currentPage === totalPages}
+                onClick={() => setCurrentPage(currentPage + 1)}
+              >
+                Next
+              </button>
+            </ul>
+          </div>
+        )}
       </div>
     </div>
   );
